@@ -30,8 +30,13 @@ namespace WpfAppProj
         private void ButtonCode_Click(object sender, RoutedEventArgs e)
         {
             CoursesLibClass course = new CoursesLibClass();
-
+            course.CourseNotFoundEvent += Course_CourseNotFoundEvent;
             labelCode.Content = course.ShowCourseName(textBoxCode.Text);
+        }
+
+        private void Course_CourseNotFoundEvent(int code)
+        {
+            MessageBox.Show($"O curso com o código {code} não foi encontrado.","Curso não encontrado.");
         }
     }
 }
