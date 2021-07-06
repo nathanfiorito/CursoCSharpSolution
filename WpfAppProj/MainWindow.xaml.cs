@@ -24,13 +24,14 @@ namespace WpfAppProj
         public MainWindow()
         {
             InitializeComponent();
+
         }
         
         private void ButtonCode_Click(object sender, RoutedEventArgs e)
         {
             CoursesLibClass course = new CoursesLibClass();
 
-            labelCode.Content = course.ShowCourseName(int.Parse(textBoxCode.Text));
+            labelCode.Content = course.ShowCourseName(textBoxCode.Text);
         }
     }
 }
